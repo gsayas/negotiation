@@ -2,10 +2,26 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <b-tabs content-class="mt-3">
-      <b-tab title="First" active><p>I'm the first tab</p></b-tab>
-      <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-      <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
+      <b-tab title="Employer Tab" active>
+        <b-form-input 
+          v-model="employerSalary" 
+          placeholder="Enter maximum offer"
+        ></b-form-input>
+        <b-button variant="outline-primary" @click="handleSubmit">
+          Submit
+        </b-button>
+      </b-tab>
+      <b-tab title="Employee Tab">
+        <b-form-input 
+          v-model="employeeSalary" 
+          placeholder="Enter minimum salary"
+        ></b-form-input>
+        <b-button variant="outline-primary" @click="handleSubmit">
+          Submit
+        </b-button>
+      </b-tab>     
   </b-tabs>
+  <span v-if="showModal" >Result: {{this.result}}</span>
   </div>
 </template>
 
@@ -14,6 +30,25 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    checkDone() {
+        if(this.employeeSalary != null && this.employerSalary != null){
+          this.showModal = true;
+          this.result = this.employeeSalary <= this.employerSalary ? 'Success!' : 'Failure!';
+        }
+      },
+      handleSubmit() {
+        this.checkDone();
+      }
+  },
+  data () {
+    return {
+      employerSalary: null,
+      employeeSalary: null,
+      showModal: false,
+      result: ''
+    }
   }
 }
 </script>
