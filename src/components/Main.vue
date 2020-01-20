@@ -3,22 +3,16 @@
     <h1>{{ msg }}</h1>
     <b-tabs content-class="mt-3">
       <b-tab title="Employer Tab" active>
-        <b-form-input 
-          v-model="employerSalary" 
-          placeholder="Enter maximum offer"
-        ></b-form-input>
-        <b-button variant="outline-primary" @click="handleSubmit">
-          Submit
-        </b-button>
+        <AmountSetter 
+          placeholder="maximum offer" 
+          @submitted="(value) => handleSubmit('employer', value)"
+        />
       </b-tab>
       <b-tab title="Employee Tab">
-        <b-form-input 
-          v-model="employeeSalary" 
-          placeholder="Enter minimum salary"
-        ></b-form-input>
-        <b-button variant="outline-primary" @click="handleSubmit">
-          Submit
-        </b-button>
+        <AmountSetter 
+          placeholder="minimum salary" 
+          @submitted="(value) => handleSubmit('employee', value)"
+        />
       </b-tab>     
   </b-tabs>
   <span v-if="showModal" >Result: {{this.result}}</span>
@@ -26,7 +20,12 @@
 </template>
 
 <script>
+import AmountSetter from './AmountSetter'
+
 export default {
+  components: {
+    AmountSetter
+  },
   name: 'HelloWorld',
   props: {
     msg: String
@@ -38,7 +37,12 @@ export default {
           this.result = this.employeeSalary <= this.employerSalary ? 'Success!' : 'Failure!';
         }
       },
-      handleSubmit() {
+      handleSubmit(field, value) {
+        if(field == 'employer'){          
+          this.employerSalary = value;
+        }else{          
+          this.employeeSalary = value;
+        }
         this.checkDone();
       }
   },
