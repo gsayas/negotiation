@@ -17,6 +17,7 @@ describe('AmountSetter.vue', () => {
 
   it('hides input box when amount has been submitted', async () => {    
     expect(wrapper.contains('input')).toBe(true)
+    expect(wrapper.contains('.submitted')).toBe(false)
     clickSubmit(wrapper)
     expect(wrapper.contains('input')).toBe(false)
     expect(wrapper.contains('.submitted')).toBe(true)

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Main msg="Welcome to Your Vue.js App"/>
+    <Negotiation />
   </div>
 </template>
 
 <script>
-import Main from './components/Main.vue'
+import Negotiation from './components/Negotiation.vue'
 
 export default {
   name: 'app',
   components: {
-    Main
+    Negotiation
   }
 }
 </script>

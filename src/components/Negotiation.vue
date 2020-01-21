@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h1>{{ msg }}</h1>
+    <h1>Negotiation App</h1>
     <b-tabs content-class="mt-3">
       <b-tab title="Employer Tab" active title-link-class="employer-tab-link">
         <AmountSetter
