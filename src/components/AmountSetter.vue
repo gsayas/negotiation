@@ -10,7 +10,7 @@
 		      Submit
 		    </b-button>
 		</div>
-		<span v-if="!visible">Amount submitted!</span>
+		<span class="submitted" v-if="!visible">Amount submitted!</span>
 	</div>
 </template>
 

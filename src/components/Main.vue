@@ -43,15 +43,15 @@ export default {
           this.showModal = true;
           this.result = this.employeeSalary <= this.employerSalary ? 'Success!' : 'Failure!';
         }
-      },
-      handleSubmit(field, value) {
-        if(field == 'employer'){          
-          this.employerSalary = value;
-        }else{          
-          this.employeeSalary = value;
-        }
-        this.checkDone();
+    },
+    handleSubmit(field, value) {
+      if(field == 'employer'){          
+        this.employerSalary = value;
+      }else{          
+        this.employeeSalary = value;
       }
+      this.checkDone();
+    }
   },
   data () {
     return {

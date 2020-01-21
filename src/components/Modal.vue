@@ -23,14 +23,13 @@
 	    },
 	    data() {
 	    	return {
-		    	temperature: 'sdas'
+		    	temperature: ''
 		    }
 	    },
 	    created() {
 	      fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=ba8c4844fe58fa036b814fcf41d3cff5')
 	      .then(response => response.json())
 	      .then(json => {
-	      	console.log(json);
 	        this.temperature = json.main.temp
 	      })
 	    } 	
