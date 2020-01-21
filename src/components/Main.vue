@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="main">
     <h1>{{ msg }}</h1>
     <b-tabs content-class="mt-3">
       <b-tab title="Employer Tab" active>
@@ -14,19 +14,26 @@
           @submitted="(value) => handleSubmit('employee', value)"
         />
       </b-tab>     
-  </b-tabs>
-  <span v-if="showModal" >Result: {{this.result}}</span>
+    </b-tabs>
+    <Modal 
+      :result="result"
+      :employerSalary="employerSalary"
+      :employeeSalary="employeeSalary"
+      :show="showModal"
+      @closed="showModal=false"
+    />
   </div>
 </template>
 
 <script>
 import AmountSetter from './AmountSetter'
+import Modal from './Modal'
 
 export default {
   components: {
-    AmountSetter
+    AmountSetter,
+    Modal
   },
-  name: 'HelloWorld',
   props: {
     msg: String
   },

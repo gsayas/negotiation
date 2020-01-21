@@ -1,7 +1,8 @@
 <template>
 	<div class="amount-setter">
 		<div v-if="visible">
-			<b-form-input 
+			<b-form-input
+				type="number"
 		    	v-model="value" 
 		    	:placeholder="'enter ' + placeholder"
 		    ></b-form-input>
@@ -9,7 +10,7 @@
 		      Submit
 		    </b-button>
 		</div>
-		<span v-if="!visible">Salary submitted!</span>
+		<span v-if="!visible">Amount submitted!</span>
 	</div>
 </template>
 
