@@ -2,14 +2,16 @@
   <div class="main">
     <h1>{{ msg }}</h1>
     <b-tabs content-class="mt-3">
-      <b-tab title="Employer Tab" active>
-        <AmountSetter 
+      <b-tab title="Employer Tab" active title-link-class="employer-tab-link">
+        <AmountSetter
+          class="employer-setter"
           placeholder="maximum offer" 
           @submitted="(value) => handleSubmit('employer', value)"
         />
       </b-tab>
-      <b-tab title="Employee Tab">
-        <AmountSetter 
+      <b-tab title="Employee Tab" title-link-class="employee-tab-link">
+        <AmountSetter
+          class="employee-setter"         
           placeholder="minimum salary" 
           @submitted="(value) => handleSubmit('employee', value)"
         />
