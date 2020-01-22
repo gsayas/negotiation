@@ -1,34 +1,33 @@
-# negotiation
+# Negotiation App
 
-## Project setup
-```
-yarn install
-```
+## Local Project setup
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### System Requirements:
+* [npm](https://www.npmjs.com/get-npm)
 
-### Compiles and minifies for production
-```
-yarn build
-```
 
-### Run your unit tests
-```
-yarn test:unit
+### How to Build
+
+```bash
+git clone https://github.com/gsayas/negotiation.git
+cd /path/to/negotiation-repo
+npm install
 ```
 
-### Run your end-to-end tests
+### How to Run the Program
+
+```bash
+npm run serve
 ```
-yarn test:e2e
+The app can be seen in your browser at http://localhost:8080
+
+
+### How to run unit tests
+```bash
+npm run test:unit
 ```
 
-### Lints and fixes files
+### How to run end-to-end tests
+```bash
+npm run test:e2e
 ```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
