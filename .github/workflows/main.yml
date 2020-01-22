@@ -9,4 +9,29 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
-      - run: npm run test:unit
+
+      - name: Run Unit Tests
+        run: npm run test:unit
+      - name: Run E2E Tests
+        run: npm run test:e2e-ci     
+
+      - name: heroku-login
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:login
+
+      - name: heroku-push
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:push -a gsayas-front web
+          
+      - name: heroku-release
+        uses: actions/heroku@master
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          args: container:release -a gsayas-front web
