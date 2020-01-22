@@ -32,3 +32,8 @@
   }
 </script>
 
+<style scoped>
+	button {
+		margin-top: 20px;
+	}
+</style>

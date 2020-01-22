@@ -31,3 +31,12 @@ npm run test:unit
 ```bash
 npm run test:e2e
 ```
+*******************************************************************************************************************************
+
+## Live Demo
+
+Since I wanted to test out Github actions I created a basic CI/CD pipeline that on every push builds the app, runs the tests and deploys it to heroku.
+
+* [Here](https://github.com/gsayas/negotiation/actions?query=branch%3Amaster+is%3Asuccess) you can see the last successful executions, and check the tests runs without having to install the app locally.
+
+* [Here](http://gsayas-front.herokuapp.com/) is the app running in Heroku. Please be aware that I'm using the free tier so it could take it a few seconds on the first request, since it has to start the cloud servers... Be patient :) !
